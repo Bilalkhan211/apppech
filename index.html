@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Darling to my World 💕</title>
+    <!-- Google Fonts: Fredoka (rounded & cute) & Outfit (clean & modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas for Floating Hearts Particle System -->
+    <canvas id="heartCanvas"></canvas>
+
+    <!-- Sound Control Button -->
+    <button id="musicToggle" class="music-toggle" aria-label="Toggle Music">
+        <svg id="musicIconPlay" class="music-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+        <svg id="musicIconMuted" class="music-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="1" y1="1" x2="23" y2="23"></line>
+            <path d="M9 9v9l12-2v-3"></path>
+            <path d="M12 5l9-1.5V9"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+    </button>
+
+    <!-- Main Card Container -->
+    <main class="proposal-container" id="proposalContainer">
+        <!-- Interactive Proposal Card -->
+        <section class="card" id="questionCard">
+            <!-- 3D Bubu Image -->
+            <div class="img-3d-scene">
+                <div class="img-3d-card">
+                    <img src="card.jpg" alt="Bubu & Dudu" class="bubu-img" />
+                </div>
+                <div class="mini-heart">❤️</div>
+            </div>
+
+            <div class="bubu-label">My Love 💕</div>
+            <h1 class="proposal-title" id="questionText">Welcome Darling to my World 🌹<br><span style="font-size:0.65em; opacity:0.85;">Click the button and enter in my love world 💖</span></h1>
+            
+            <!-- Action Buttons -->
+            <div class="btn-group" id="btnGroup">
+                <button id="yesBtn" class="btn btn-yes">YES! 💕</button>
+                <button id="noBtn" class="btn btn-no">No 💔</button>
+            </div>
+        </section>
+
+        <!-- Celebration Card (Hidden initially) -->
+        <section class="card success-card hidden" id="successCard">
+            <!-- Canvas for Confetti -->
+            <canvas id="confettiCanvas"></canvas>
+            
+            <div class="success-content">
+
+                <h1 class="success-title">Remember 🥺</h1>
+                <h2 class="success-subtitle">Our Precious Moments 💍✨</h2>
+
+                <!-- Couple Photos Gallery -->
+                <div class="gallery-grid">
+
+                    <div class="gallery-item gallery-item--large" style="--delay:0s">
+                        <div class="gallery-frame">
+                            <img src="card.jpg" alt="Our Moment" />
+                            <div class="gallery-overlay"><span>💕 Us</span></div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" style="--delay:0.15s">
+                        <div class="gallery-frame">
+                            <img src="bangles.jpg" alt="Our Moment" />
+                            <div class="gallery-overlay"><span>🌹 Forever</span></div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" style="--delay:0.3s">
+                        <div class="gallery-frame">
+                            <img src="black.jpg" alt="Our Moment" />
+                            <div class="gallery-overlay"><span>✨ Always</span></div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item gallery-item--wide" style="--delay:0.45s">
+                        <div class="gallery-frame">
+                            <img src="download.jpg" alt="Our Moment" />
+                            <div class="gallery-overlay"><span>❤️ My World</span></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="page2-actions">
+                    <button id="nextPageBtn" class="btn btn-next">My Message for You 💌</button>
+                    <button id="resetBtn" class="btn btn-reset">Restart 🔄</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ❤️ Page 3 — Love Letter -->
+        <section class="card love-letter-card hidden" id="loveLetterCard">
+            <div class="love-letter-content">
+
+                <!-- Floating hearts deco -->
+                <div class="letter-hearts">
+                    <span class="lh lh1">💖</span>
+                    <span class="lh lh2">🌹</span>
+                    <span class="lh lh3">✨</span>
+                    <span class="lh lh4">💕</span>
+                    <span class="lh lh5">🌸</span>
+                </div>
+
+                <div class="letter-icon">💌</div>
+                <h1 class="letter-title">Dear My Lovely Partner 💖</h1>
+
+                <div class="letter-body">
+                    <p>Every moment with you feels like a dream I never want to wake up from. 🌙</p>
+                    <p>You are my favourite person, my safe place, my everything. 🥰</p>
+                    <p>I want to hold your hand through every season of life — through the laughs, the storms, and all the quiet moments in between. 💑</p>
+                    <p class="letter-sign">Forever yours,<br><strong>From your Zoja 🌹</strong></p>
+                </div>
+
+                <div class="letter-actions">
+                    <button id="backToGalleryBtn" class="btn btn-reset">← Back</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
